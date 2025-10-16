@@ -80,8 +80,10 @@ PORT=3000
 
 ```bash
 1-
+
 tsc --watch
 2-
+
 nodemon dist/index.js .
 ```
 
