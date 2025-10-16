@@ -45,7 +45,9 @@ CREATE TABLE usuarios (
 
 ## 🚀 Instalación y Ejecución
 CLonar repositorio 
--git clone https://github.com/Olimac1954/Prueba-lerprevencion-angular-node.js-java-.git
+```bash
+git clone https://github.com/Olimac1954/Prueba-lerprevencion-angular-node.js-java-.git
+```
 -cd Prueba lerprevencion Angular+nodejs
 -cd backend o frontend
 -npm install respectivamente
@@ -79,10 +81,11 @@ PORT=3000
     ```bash
     tsc --watch
     ```
+    
   2- 
-    ```bash
+  ```bash
     nodemon dist/index.js .
-    ```
+  ```
 
 La API estará disponible en: [http://localhost:3000/api/data](http://localhost:3000/api/usuarios)
 
@@ -128,18 +131,6 @@ cd main/java/app  # Consola
 cd main/java/visual  # Interfaz gráfica
 ```
 
-2. Compilar:
-
-```bash
-javac -cp postgresql-<version>.jar:. *.java
-```
-
-3. Ejecutar:
-
-```bash
-java -cp postgresql-<version>.jar:. Main
-```
-
 #### Funcionalidades
 
 * Crear usuario
@@ -164,18 +155,85 @@ java -cp postgresql-<version>.jar:. Main
 
 ## 🧪 Pruebas
 
-* **Node.js:** Postman con rutas GET, POST, PUT y DELETE
-* **Java (consola):** Ejecutar `Main.java` en `main/java/app`
-* **Java (GUI):** Ejecutar `Main.java` en `main/java/visual`
-* **Angular:** Interfaz con formularios y botones para CRUD
+Para probar el backend de Node.js, se puede usar **Postman** para enviar peticiones HTTP a la API.
 
----
+### 1️⃣ Preparar el entorno
 
-## 📝 Notas Adicionales necesarias para la realizacion de este proyecto
+1. Asegurarse de que el servidor Node.js esté corriendo:
 
-* No subir la carpeta `node_modules`
-* Usar versiones recientes de Node.js, Java y PostgreSQL
-* Docker opcional para levantar PostgreSQL o el proyecto completo
+```bash
+cd backend
+npx nodemon --watch .
+```
+
+2. La API estará disponible en:
+
+```
+http://localhost:3000/api/data
+```
+
+3. Abrir Postman y crear una nueva colección, por ejemplo: `Usuarios API`.
+
+### 2️⃣ Endpoints disponibles
+
+#### a) GET — Listar usuarios
+
+* Método: **GET**
+* URL: `http://localhost:3000/api/data`
+* Presionar **Send**.
+* Resultado esperado: un JSON con todos los usuarios, por ejemplo:
+
+```json
+[
+  {
+    "id": 1,
+    "nombre": "Andres",
+    "correo": "andres@example.com",
+    "edad": 25
+  }
+]
+```
+
+#### b) POST — Crear usuario
+
+* Método: **POST**
+* URL: `http://localhost:3000/api/data`
+* Body → raw → JSON:
+
+```json
+{
+  "nombre": "Andres",
+  "correo": "andres@example.com",
+  "edad": 25
+}
+```
+
+* Presionar **Send**.
+* Resultado esperado: el usuario se crea y devuelve un JSON con su información.
+
+#### c) PUT — Actualizar usuario
+
+* Método: **PUT**
+* URL: `http://localhost:3000/api/data/1` (reemplazar `1` por el `id` del usuario)
+* Body → raw → JSON:
+
+```json
+{
+  "nombre": "Andres Actualizado",
+  "correo": "andres.actualizado@example.com",
+  "edad": 26
+}
+```
+
+* Presionar **Send**.
+* Resultado esperado: confirmación de actualización del usuario.
+
+#### d) DELETE — Eliminar usuario
+
+* Método: **DELETE**
+* URL: `http://localhost:3000/api/data/1` (reemplazar `1` por el `id` del usuario)
+* Presionar **Send**.
+* Resultado esperado: mensaje confirmando que el usuario fue eliminado.
 
 ---
 
