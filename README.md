@@ -53,6 +53,9 @@ git clone https://github.com/Olimac1954/Prueba-lerprevencion-angular-node.js-jav
 -npm install respectivamente
 
 ### 1️⃣ Backend Node.js
+El backend esta construido de tal manera que los enpoints permitan hacer uso de 
+GET,PUT,UPDATE y DELETE, mas adelante en este redme explico como se muestra en el front y como poder usarlo en el postman
+todo el backend esta funcional y conectado a la base de datos
 
 1. Entrar a la carpeta del backend:
 
@@ -73,10 +76,13 @@ npm install
 ```env
 PORT=3000
 ```
+4. configurar el acceso a la base de datos
+   en el directorio
+   **src/db/conection.ts en la constante sequelize**, se encontraran las credenciales para acceder a la base de datos
 
 > Configuración de la base de datos en `src/db/connection.ts`.
 
-4. Ejecutar servidor en modo desarrollo:
+5. Ejecutar servidor en modo desarrollo:
 
 ```bash
 1-
@@ -92,6 +98,11 @@ La API estará disponible en: [http://localhost:3000/api/data](http://localhost:
 ---
 
 ### 2️⃣ Frontend Angular
+El frontend esta totalmente construido , con un diseño amigable para el usuario, cuenta con una tabla en la cual muestra todos los usuarios
+y cuenta con una columna la cual muestra sus botones de editar y eliminar , adicionalmente fuera de la tabla en la parte superior derecha 
+cuenta con un boton para agregar un nuevo usuario
+cada que se realiza una accion , este emitira un pequeño mensaje de informacion 
+todo el Frontend esta funcional y conectado a los endpoints del backend
 
 1. Entrar a la carpeta del frontend:
 
@@ -113,14 +124,27 @@ ng serve
 
 La aplicación estará disponible en: [http://localhost:4200](http://localhost:4200)
 
+
 ---
 
 ### 3️⃣ Backend Java (CRUD)
-
+Se realiza un CRUD en java,elaborando dos ejecutables, por consola y por interfaz,
+Este CRUD esta totalmente conectado a la base de datos lo cual permite crear,editar,eliminar y actualizar datos 
+en la base
 El proyecto Java incluye **dos ejecutables**:
 
 * Consola: `main/java/app`
 * Interfaz gráfica: `main/java/visual`
+**configurar base de datos**
+se ingresa al directorio
+```bash
+cd main/java/database
+```
+en el archivo connection encontrara
+ULR 
+USER
+PASWORD 
+se editan para acceder a la base
 
 #### Ejecución
 
