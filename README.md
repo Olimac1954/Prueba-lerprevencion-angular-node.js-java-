@@ -1,122 +1,186 @@
 # Prueba Técnica - Desarrollador Full Stack
 
-## Descripción del Proyecto
-Esta prueba técnica consiste en desarrollar un microservicio en Node.js con Express que se conecta a una base de datos PostgreSQL y expone datos que son consumidos por un frontend en Angular.  
-Además, se incluye un CRUD en Java que permite insertar, modificar, eliminar y consultar usuarios directamente desde la aplicación Java.  
-El proyecto permite crear, leer, actualizar y eliminar registros de usuarios desde Node.js, Angular y Java.
+## 🌟 Descripción del Proyecto
 
-## Tecnologías Utilizadas
-- Backend: Node.js, Express, pg (PostgreSQL client), nodemon, TypeScript, dotenv, cors, Sequelize  
-- Base de datos: PostgreSQL  
-- Frontend: Angular, Bootstrap o Angular Material  
-- Backend Java: Java 17+, JDBC  
-- Herramientas adicionales: Postman, Docker (opcional)  
+Este proyecto consiste en un microservicio en **Node.js** con **Express** que se conecta a **PostgreSQL** y expone datos para ser consumidos por un frontend en **Angular**.
+También incluye un **CRUD en Java** para gestionar usuarios desde consola o interfaz gráfica.
 
-## Estructura de la Base de Datos
-Tabla: `usuarios`  
+**Objetivo:** Crear, leer, actualizar y eliminar registros de usuarios desde Node.js, Angular y Java.
 
-- id: SERIAL PRIMARY KEY  
-- nombre: VARCHAR(100)  
-- correo: VARCHAR(100)  
-- edad: INT  
+---
 
-SQL para crear la tabla:
+## 🛠 Tecnologías Utilizadas
 
-CREATE TABLE usuarios (  
-  id SERIAL PRIMARY KEY,  
-  nombre VARCHAR(100),  
-  correo VARCHAR(100),  
-  edad INT  
+* **Backend (Node.js):** Node.js, Express, pg, TypeScript, dotenv, cors, Sequelize, nodemon
+* **Base de datos:** PostgreSQL
+* **Frontend (Angular):** Angular, Bootstrap o Angular Material
+* **Backend Java:** Java 17+, JDBC
+* **Herramientas:** Postman, Docker (opcional)
+
+---
+
+## 📂 Estructura de la Base de Datos
+
+Tabla: `usuarios`
+
+| Campo  | Tipo         | Descripción        |
+| ------ | ------------ | ------------------ |
+| id     | SERIAL       | Clave primaria     |
+| nombre | VARCHAR(100) | Nombre del usuario |
+| correo | VARCHAR(100) | Correo del usuario |
+| edad   | INT          | Edad del usuario   |
+
+**SQL para crear la tabla:**
+
+```sql
+CREATE TABLE usuarios (
+  id SERIAL PRIMARY KEY,
+  nombre VARCHAR(100),
+  correo VARCHAR(100),
+  edad INT
 );
+```
 
-## Instalación y Ejecución
+---
 
-### 1. Backend Node.js
-1. Clonar el repositorio y entrar en la carpeta backend:  
-   `git clone <URL_DEL_REPOSITORIO>`  
-   `cd backend`  
+## 🚀 Instalación y Ejecución
+CLonar repositorio 
+-git clone https://github.com/Olimac1954/Prueba-lerprevencion-angular-node.js-java-.git
+-cd Prueba lerprevencion Angular+nodejs
+-cd backend o frontend
+-npm install respectivamente
 
-2. Instalar dependencias del proyecto:  
-   `npm install`  
+### 1️⃣ Backend Node.js
 
-3. Instalar globalmente nodemon si no está instalado:  
-   `npm install -g nodemon`  
+1. Entrar a la carpeta del backend:
 
-4. Dependencias principales del backend:  
-   - nodemon  
-   - TypeScript  
-   - express  
-   - dotenv  
-   - cors  
-   - sequelize  
+```bash
+cd backend
+```
 
-   Estas se instalan automáticamente con `npm install`, pero si deseas instalar alguna globalmente, puedes usar `npm install -g <paquete>`.  
+2. Instalar dependencias:
 
-5. Configurar el puerto del servidor en `.env`:  
-   PORT=3000  
-   **Nota:** La configuración de la base de datos (usuario, contraseña y nombre de la base) se encuentra en `src/db/connection.ts`. No es necesario modificar `.env` para la conexión.  
+```bash
+npm install
+```
 
-6. Ejecutar el servidor en modo desarrollo:  
-   `nodemon --watch .`  
-   La API estará disponible en: http://localhost:3000/api/data  
+> Incluye nodemon, TypeScript, Express, dotenv, cors y Sequelize.
 
-### 2. Frontend Angular
-1. Entrar a la carpeta frontend: `cd frontend`  
-2. Instalar dependencias: `npm install`  
-3. Ejecutar Angular: `ng serve`  
-   La aplicación estará disponible en: http://localhost:4200  
+3. Configurar el puerto en `.env`:
 
-### 3. Backend Java (CRUD)
-El proyecto Java incluye **dos ejecutables**:  
+```env
+PORT=3000
+```
 
-- **Consola:** ubicado en `main/java/app`  
-- **Interfaz gráfica:** ubicado en `main/java/visual`  
+> Configuración de la base de datos en `src/db/connection.ts`.
 
-#### Ejecución del CRUD en Java
+4. Ejecutar servidor en modo desarrollo:
+  1- 
+    ```bash
+    tsc --watch
+    ```
+  2- 
+    ```bash
+    nodemon dist/index.js .
+    ```
 
-1. Entrar a la carpeta del proyecto Java correspondiente al ejecutable:  
-   - Consola: `cd main/java/app`  
-   - Interfaz gráfica: `cd main/java/visual`  
+La API estará disponible en: [http://localhost:3000/api/data](http://localhost:3000/api/usuarios)
 
-2. Compilar: `javac -cp postgresql-<version>.jar:. *.java`  
-3. Ejecutar: `java -cp postgresql-<version>.jar:. Main`  
+---
 
-CRUD en Java:  
-- **Crear usuario:** Inserta un nuevo registro en la tabla `usuarios`.  
-- **Leer usuarios:** Muestra todos los registros existentes.  
-- **Actualizar usuario:** Modifica los datos de un usuario por su `id`.  
-- **Eliminar usuario:** Borra un usuario por su `id`.  
+### 2️⃣ Frontend Angular
 
-Ejemplo de clase `UsuarioCRUD` en Java:  
-- `createUser(String nombre, String correo, int edad)`  
-- `getAllUsers()`  
-- `updateUser(int id, String nombre, String correo, int edad)`  
-- `deleteUser(int id)`  
+1. Entrar a la carpeta del frontend:
 
-Ejemplo de clase `Main.java` para menú interactivo (consola):  
+```bash
+cd frontend
+```
 
-- Muestra en consola un menú con opciones:  
-  1. Crear usuario  
-  2. Leer usuarios  
-  3. Actualizar usuario  
-  4. Eliminar usuario  
-- Según la opción, llama a los métodos de `UsuarioCRUD`.  
-- Permite ingresar datos desde teclado y ejecuta la operación correspondiente en PostgreSQL.  
+2. Instalar dependencias:
 
-## Pruebas
-- **Node.js:** Usar Postman con rutas GET, POST, PUT y DELETE para obtener, crear, actualizar y eliminar usuarios.  
-- **Java (consola):** Ejecutar `Main.java` en `main/java/app` y usar el menú interactivo.  
-- **Java (interfaz gráfica):** Ejecutar `Main.java` en `main/java/visual` para interactuar mediante la GUI.  
-- **Angular:** Interfaz que muestra usuarios y permite crear, actualizar y eliminar registros mediante formularios y botones.  
+```bash
+npm install
+```
 
-## Notas Adicionales
-- No subir la carpeta `node_modules` al repositorio.  
-- Se recomienda usar versiones recientes de Node.js, Java y PostgreSQL.  
-- Se puede usar Docker para levantar PostgreSQL o todo el proyecto si se desea.  
+3. Ejecutar Angular:
 
-## Autor
-- Nombre: Camilo Andres Ortegon Ayala  
-- Correo: andresayala1954@hotmail.com 
-- GitHub: https://github.com/Olimac1954
+```bash
+ng serve
+```
 
+La aplicación estará disponible en: [http://localhost:4200](http://localhost:4200)
 
+---
+
+### 3️⃣ Backend Java (CRUD)
+
+El proyecto Java incluye **dos ejecutables**:
+
+* Consola: `main/java/app`
+* Interfaz gráfica: `main/java/visual`
+
+#### Ejecución
+
+1. Entrar a la carpeta correspondiente:
+
+```bash
+cd main/java/app  # Consola
+cd main/java/visual  # Interfaz gráfica
+```
+
+2. Compilar:
+
+```bash
+javac -cp postgresql-<version>.jar:. *.java
+```
+
+3. Ejecutar:
+
+```bash
+java -cp postgresql-<version>.jar:. Main
+```
+
+#### Funcionalidades
+
+* Crear usuario
+* Leer usuarios
+* Actualizar usuario
+* Eliminar usuario
+
+#### Métodos en `UsuarioCRUD.java`:
+
+* `createUser(String nombre, String correo, int edad)`
+* `getAllUsers()`
+* `updateUser(int id, String nombre, String correo, int edad)`
+* `deleteUser(int id)`
+
+#### `Main.java` (Consola)
+
+* Menú interactivo con opciones CRUD
+* Entrada de datos desde teclado
+* Operaciones sobre PostgreSQL
+
+---
+
+## 🧪 Pruebas
+
+* **Node.js:** Postman con rutas GET, POST, PUT y DELETE
+* **Java (consola):** Ejecutar `Main.java` en `main/java/app`
+* **Java (GUI):** Ejecutar `Main.java` en `main/java/visual`
+* **Angular:** Interfaz con formularios y botones para CRUD
+
+---
+
+## 📝 Notas Adicionales necesarias para la realizacion de este proyecto
+
+* No subir la carpeta `node_modules`
+* Usar versiones recientes de Node.js, Java y PostgreSQL
+* Docker opcional para levantar PostgreSQL o el proyecto completo
+
+---
+
+## 👤 Autor
+
+* **Nombre:** Camilo Andres Ortegon Ayala
+* **Correo:** [andresayala1954@hotmail.com](mailto:andresayala1954@hotmail.com)
+* **GitHub:** [https://github.com/Olimac1954](https://github.com/Olimac1954)
