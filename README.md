@@ -1,4 +1,4 @@
-# Prueba Técnica - Desarrollador Full Stack
+# Prueba Técnica - Desarrollador Junior Full Stack
 
 ## 🌟 Descripción del Proyecto
 
