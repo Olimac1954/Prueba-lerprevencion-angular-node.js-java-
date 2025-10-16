@@ -81,12 +81,9 @@ PORT=3000
     ```bash
     1-
     tsc --watch
-    ```
-     
-  ```bash
-  2-
+    2-
     nodemon dist/index.js .
-  ```
+    ```
 
 La API estará disponible en: [http://localhost:3000/api/data](http://localhost:3000/api/usuarios)
 
