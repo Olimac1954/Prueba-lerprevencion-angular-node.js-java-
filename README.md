@@ -128,7 +128,7 @@ La aplicación estará disponible en: [http://localhost:4200](http://localhost:4
 
 ---
 
-### 3️⃣ Backend Java (CRUD)
+### 3️⃣ Java (CRUD)
 Realizado en intellij con **openjdk-25 (oracle OPENJDK 25)**
 Se realiza un CRUD en java,elaborando dos ejecutables, por consola y por interfaz,
 Este CRUD esta totalmente conectado a la base de datos lo cual permite crear,editar,eliminar y actualizar datos 
