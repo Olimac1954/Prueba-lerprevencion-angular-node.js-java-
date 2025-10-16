@@ -1,0 +1,32 @@
+<div class="container aling-items-center mt-5">
+    <div class="col-lg-4 offset-lg-4">
+        <div class="card text-white bg-secondary mb-3" style="max-width: 25rem;">
+          <div class="card-header text-center">{{operacion}} usuario</div>
+          <div class="card-body">
+            <form [formGroup]="form" (ngSubmit)="addUser()"> 
+                <input formControlName="nombre" type="text" class="form-control mt-3" placeholder="Ingrese Nombre: ">
+                    <span *ngIf="form.get('nombre')?.hasError('required') && form.get('nombre')?.touched" >
+                        El campo nombre es <strong>requerido</strong>
+                    </span>
+                <input formControlName="correo" type="email" class="form-control mt-3" placeholder="Ingrese Correo: ">
+                    <span *ngIf="form.get('correo')?.hasError('required') && form.get('correo')?.touched" >
+                    El campo Correo es <strong>requerido</strong>
+                    </span>
+                <input formControlName="edad" type="number" class="form-control mt-3" placeholder="Ingrese Edad: ">
+                    <span *ngIf="form.get('edad')?.hasError('required') && form.get('edad')?.touched" >
+                    El campo Edad es <strong>requerido</strong>
+                    </span>
+                <div class="row mt-2 text-center">
+                    <div class="col-lg-6">
+                        <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Aceptar</button>
+                    </div>
+                    <div class="col-lg-6">
+                        <button routerLink="/listUsers" type="button" class="btn btn-primary">Volver</button>
+                    </div>
+                </div>
+            </form>
+          </div>
+        </div>
+
+    </div>
+</div>
