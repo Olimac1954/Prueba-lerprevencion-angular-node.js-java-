@@ -79,11 +79,12 @@ PORT=3000
 4. Ejecutar servidor en modo desarrollo:
   1- 
     ```bash
+    1-
     tsc --watch
     ```
-    
-  2- 
+     
   ```bash
+  2-
     nodemon dist/index.js .
   ```
 
