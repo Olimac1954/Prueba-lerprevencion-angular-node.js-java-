@@ -78,12 +78,12 @@ PORT=3000
 
 4. Ejecutar servidor en modo desarrollo:
   1- 
-    ```bash
-    1-
-    tsc --watch
-    2-
-    nodemon dist/index.js .
-    ```
+   ```bash
+   1-
+   tsc --watch
+   2-
+   nodemon dist/index.js .
+   ```
 
 La API estará disponible en: [http://localhost:3000/api/data](http://localhost:3000/api/usuarios)
 
