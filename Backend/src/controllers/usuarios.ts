@@ -8,7 +8,7 @@ export const getUsers = async (req: Request, res: Response) => {
     res.json(listUsuarios); // Se envía la lista de usuarios como respuesta JSON
 }
 
-// 🔹 Obtener un usuario por su ID
+// Obtener un usuario por su ID
 export const getUser = async (req: Request, res: Response) => {
     const { id } = req.params; // Se obtiene el ID de los parámetros de la URL
     const user = await usuarios.findByPk(id); // findByPk busca un registro por su clave primaria
@@ -22,7 +22,7 @@ export const getUser = async (req: Request, res: Response) => {
     }
 }
 
-// 🔹 Eliminar un usuario por su ID
+//Eliminar un usuario por su ID
 export const deleteUsusario = async (req: Request, res: Response) => {
     const { id } = req.params;
     const user = await usuarios.findByPk(id); // Buscamos al usuario
@@ -40,7 +40,7 @@ export const deleteUsusario = async (req: Request, res: Response) => {
     }
 }
 
-// 🔹 Crear un nuevo usuario
+//Crear un nuevo usuario
 export const postUsuario = async (req: Request, res: Response) => {
     const { body } = req; // Obtenemos los datos enviados en el cuerpo de la petición
 
@@ -58,7 +58,7 @@ export const postUsuario = async (req: Request, res: Response) => {
     }
 }
 
-// 🔹 Actualizar un usuario por su ID
+// Actualizar un usuario por su ID
 export const updateUsuario = async (req: Request, res: Response) => {
     const { body } = req; // Datos a actualizar
     const { id } = req.params; // ID del usuario a actualizar
