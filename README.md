@@ -85,10 +85,10 @@ PORT=3000
 5. Ejecutar servidor en modo desarrollo:
 
 ```bash
-1-
+1-(mantener activo en una terminar para crear carpeta dist)
 
 tsc --watch
-2-
+2-(ejecutar en otra terminal)
 
 nodemon dist/index.js .
 ```
