@@ -88,6 +88,7 @@ PORT=3000
 1-(mantener activo en una terminar para crear carpeta dist)
 
 tsc --watch
+
 2-(ejecutar en otra terminal)
 
 nodemon dist/index.js .
